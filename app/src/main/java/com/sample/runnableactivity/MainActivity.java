@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         Log.v(TAG2, "Now I am in onStart");
         }
 
+
+
     @Override
     protected void onStop() {
         super.onStop();
