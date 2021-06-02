@@ -7,7 +7,9 @@ import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
     Thread wr;
+
     boolean running = true;
+
     String TAG2 = "Thread";
     String TAG = "THREAD";
 
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 int i = 0;
                 for(i=0; i<20 && running; i++) {
+
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
@@ -35,12 +38,12 @@ public class MainActivity extends AppCompatActivity {
                     Log.v(TAG2, "Runnable time = " + i);
                     Log.v(TAG, "Thread time = " + i);
                 }
+
             }
         });
         wr.start();
         Log.v(TAG2, "Now I am in onStart");
         }
-
 
 
     @Override
@@ -50,15 +53,18 @@ public class MainActivity extends AppCompatActivity {
         Log.v(TAG2, "Now I am in onStop");
     }
 
+
     @Override
     protected void onPause() {
         super.onPause();
         Log.v(TAG2, "Now I am in onPause");
     }
 
+
     @Override
     protected void onResume() {
         super.onResume();
         Log.v(TAG2, "Now I am in onResume");
+
     }
 }
